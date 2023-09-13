@@ -1,5 +1,5 @@
 import {useEffect,useState} from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams,Link } from 'react-router-dom'
 import { Apiservices } from '../../servise/api.service'
 import { Box, Chip, Stack, Typography } from '@mui/material'
 import ReactPlayer from 'react-player'
@@ -28,39 +28,13 @@ Getdata()
 
   // const {snippet:{title,channelId,channelTitle,description,tags,thumbnails},statistics:{viewCount,likeCount,commentCount}}=vidDetail
   return (
-    <Box minHeight={'90vh'} mb={10}>
-<Box display={'flex'}>
-  <Box width={'75%'}>
+    <Box minHeight={'100vh'} mb={10}>
+<Box display={'flex'} height={'100vh'}>
+  <Box width={'100%'} height={'100vh'}>
     <ReactPlayer url={`https://www.youtube.com/watch?v=${id}`} className='react-player' controls/>
-    {/* {videoDetail?.snippet.tags.map((item, idx) => (
-						<Chip
-							label={item}
-							key={idx}
-							sx={{ marginTop: '10px', cursor: 'pointer', ml: '10px' }}
-							onDelete={() => {}}
-							variant='outlined'
-						/>
-					))} */}
-					{/* <Typography variant='h5' fontWeight='bold' p={2}>
-						{videoDetail.snippet.title}
-					</Typography>
-					<Typography variant='subtitle2' p={2} sx={{ opacity: '.7' }}>
-						{(videoDetail.snippet.description)}
-					</Typography> */}
-    {/* {
-    videtail.snippet.tags.map((arr,index)=>{
-     <Chip label={arr} key={index} sx={{marginTop:'10px',cursor:'pointer',ml:'10px'}}  onDelete={()=>{}} variant='outlined'/>
-    })
-    } */}
-    {/* <Typography variant='h5' fontWeight={'bold'} p={2} >
-{videtail.snippet.title}
-    </Typography>
-    <Typography variant='subtitle1'  p={2} sx={{opacity:'0.7'}}>
-{videtail.snippet.description}
-    </Typography> */}``
   </Box>
-  <Box>Suggested Video</Box>
 </Box>
+  <button style={{backgroundColor:'black',color:'white',padding:'10px 20px',width:'100px',margin:'0 auto',border:'none'}}><Link to={'/'}>Back to</Link></button>
     </Box>
   )
 }
